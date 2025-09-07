@@ -14,11 +14,11 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
   if (messages.length === 0) {
     return (
       <div className="flex flex-col items-center justify-center h-full px-4 text-center">
-        <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 mb-4 shadow-sm">
-          <Bot className="h-7 w-7 text-blue-600" />
+        <div className="flex items-center justify-center w-14 h-14 rounded-2xl bg-blue-50 dark:bg-blue-950/50 mb-4 shadow-sm">
+          <Bot className="h-7 w-7 text-blue-600 dark:text-blue-400" />
         </div>
-        <p className="text-neutral-900 font-semibold text-lg mb-2">Start a conversation to generate React components</p>
-        <p className="text-neutral-500 text-sm max-w-sm">I can help you create buttons, forms, cards, and more</p>
+        <p className="text-neutral-900 dark:text-neutral-100 font-semibold text-lg mb-2">Start a conversation to generate React components</p>
+        <p className="text-neutral-500 dark:text-neutral-400 text-sm max-w-sm">I can help you create buttons, forms, cards, and more</p>
       </div>
     );
   }
@@ -36,8 +36,8 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
           >
             {message.role === "assistant" && (
               <div className="flex-shrink-0">
-                <div className="w-9 h-9 rounded-lg bg-white border border-neutral-200 shadow-sm flex items-center justify-center">
-                  <Bot className="h-4.5 w-4.5 text-neutral-700" />
+                <div className="w-9 h-9 rounded-lg bg-white dark:bg-neutral-800 border border-neutral-200 dark:border-neutral-700 shadow-sm flex items-center justify-center">
+                  <Bot className="h-4.5 w-4.5 text-neutral-700 dark:text-neutral-300" />
                 </div>
               </div>
             )}
@@ -49,8 +49,8 @@ export function MessageList({ messages, isLoading }: MessageListProps) {
               <div className={cn(
                 "rounded-xl px-4 py-3",
                 message.role === "user" 
-                  ? "bg-blue-600 text-white shadow-sm" 
-                  : "bg-white text-neutral-900 border border-neutral-200 shadow-sm"
+                  ? "bg-blue-600 dark:bg-blue-600 text-white shadow-sm" 
+                  : "bg-white dark:bg-neutral-800 text-neutral-900 dark:text-neutral-100 border border-neutral-200 dark:border-neutral-700 shadow-sm"
               )}>
                 <div className="text-sm">
                   {message.parts ? (
