@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(find:*)",
-      "Read(//c/Users/leand/OneDrive/Desktop/**)"
+      "Read(//c/Users/leand/OneDrive/Desktop/**)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
